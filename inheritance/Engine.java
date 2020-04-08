@@ -1,4 +1,5 @@
 package com.jse.inheritance;
+
 import java.awt.JobAttributes;
 import java.util.Scanner;
 import javax.swing.JOptionPane;
@@ -29,7 +30,7 @@ public static void main(String[] args) {
 				message += String.format("출력: %s,%s,%s \n",
 						phones[i].getPhoneNumber(),phones[i].getName(),phones[i].getCompany());	
 			}
-			JOptionPane.showInputDialog(null, message);
+			JOptionPane.showMessageDialog(null, message);
 			break;
 			
 			
@@ -44,12 +45,12 @@ public static void main(String[] args) {
 		Celphone[] celphones = phoneService.getCelphones();
 		message = "";
 		for (int i = 0; i < 3; i++) {
-			 String.format("출력: %s,%s,%s,%s \n",
+			message += String.format("출력: %s,%s,%s,%s \n",
 					celphones[i].getPhoneNumber(),celphones[i].getName(),celphones[i].getCompany(),
 					celphones[i].getMove());
 			
 		}
-		JOptionPane.showInputDialog(null, message);
+		JOptionPane.showMessageDialog(null, message);
 		 break;
 		case "5":
 			for (int i = 0; i < 3; i++) {
@@ -70,7 +71,7 @@ public static void main(String[] args) {
 			Iphone[] iphons = phoneService.getIphons();
 			message = "";
 			for (int i = 0; i < 3; i++) {
-				 String.format("출력: %s,%s,%s,%s \n",
+				message += String.format("출력: %s,%s,%s,%s \n",
 iphons[i].getPhoneNumber(),iphons[i].getName(),iphons[i].getCompany(),iphons[i].getMove(),iphons[i].getSearch());
 				 
 				 /*	Iphone[] iphone = phoneService.getIphone();
@@ -84,7 +85,7 @@ iphons[i].getPhoneNumber(),iphons[i].getName(),iphons[i].getCompany(),iphons[i].
 				  
 				 
 			}
-			JOptionPane.showInputDialog(null, message);
+			JOptionPane.showMessageDialog(null, message);
 			 break;
 		case "7":
 			for(int i=0; i<3; i++) {
@@ -100,21 +101,23 @@ iphons[i].getPhoneNumber(),iphons[i].getName(),iphons[i].getCompany(),iphons[i].
 			GalaxyNote[] galaxyNote = phoneService.getGalaxyNotes();
 			message = "";
 			for (int i = 0; i < 3; i++) {
-				String.format("출력: %s,%s,%s,%s \n",
+				message +=String.format("출력: %s,%s,%s,%s \n",
 						galaxyNote[i].getPhoneNumber(),galaxyNote[i].getName(),galaxyNote[i].getCompany(),
 						galaxyNote[i].getMove(),galaxyNote[i].getSearch(),galaxyNote[i].getBihSize());
 				
 				
 			}
-			JOptionPane.showInputDialog(null, message);
+			JOptionPane.showMessageDialog(null, message);
+			
+			
 			
 			break;
 		}
 	}
 }
 
-private static Object getPhoneNumber() {
-	// TODO Auto-generated method stub
-	return null;
-}
+	private static Object getPhoneNumber() {
+		// TODO Auto-generated method stub
+		return null;
+	}
 }
