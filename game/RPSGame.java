@@ -1,21 +1,43 @@
-package com.jse.app;
+package com.jse.game;
+
+
 
 public class RPSGame {
+
 	private int userValue;
+
 	private int computerValue;
+
 	
+
+	
+
 	public void setUserValue(int userValue) {
+
 		this.userValue = userValue;
+
 	}
-	public int getUserValue( ) {
+
+	public int getUserValue() {
+
 		return userValue;
+
 	}
+
 	public void setComputerValue(int computerValue) {
+
 		this.computerValue = computerValue;
+
 	}
-	public int setComputerValue() {
+
+	public int getComputerValue() {
+
 		return computerValue;
+
 	}
+
+	
+
 	public String game() {
 
 		String result = "";
@@ -73,7 +95,9 @@ public class RPSGame {
 		return result;
 
 	}
+
 	
+
+	
+
 }
-
-
