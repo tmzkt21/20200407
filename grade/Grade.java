@@ -38,4 +38,5 @@ public class Grade {
 
 	private int korean,math,english;
 
+to
 }
