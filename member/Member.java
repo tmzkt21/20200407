@@ -10,7 +10,7 @@ import lombok.Data;
 
 public class Member {
 
-	private String userid,passwd,name,ssn;
+	private String userid,passwd,name,ssn,addr;
 
 	
 

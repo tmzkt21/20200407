@@ -2,11 +2,9 @@ package com.jse.member;
 
 
 
-import java.awt.event.ActionEvent;
+import java.awt.Container;
 
-import java.awt.event.ActionListener;
-
-
+import java.awt.Font;
 
 import javax.swing.JButton;
 
@@ -14,108 +12,228 @@ import javax.swing.JFrame;
 
 import javax.swing.JLabel;
 
-import javax.swing.JPanel;
+import javax.swing.JTextArea;
 
 import javax.swing.JTextField;
 
 
 
-public class LoginView extends JFrame{
+public class MemberView extends JFrame {
 
 	private static final long serialVersionUID = 1L;
 
-	public void open() {
+    private Container container; 
 
-		this.setSize(500, 500);
+    private JLabel title,nameLabel,useridLabel,passwordLabel,
 
-		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+    				ssnLabel,addrLabel; 
 
-		this.setVisible(true);
+    private JTextField nameText, useridText, passwordText, ssnText,
 
-		JPanel panel = new JPanel();
+    					addrText; 
 
-		this.add(panel);
+    private JTextArea resultText; 
 
-		JLabel nameLabel = new JLabel("로그인 이름");
+    private JButton submitButton, listButton; 
 
-		JLabel useridLabel = new JLabel("아이디");
+    public MemberService memberService;
 
-		JLabel passwordLabel = new JLabel("패스워드");
+    public void open(){ 
 
-		JLabel ssnLabel = new JLabel("SSN");
+        memberService = new MemberServiceImpl();
 
-		JLabel contentLabel = new JLabel("추가사항");
+    	setTitle("Swing Exercise"); 
 
-		panel.add(nameLabel);
+        setBounds(300, 90, 900, 600); 
 
-		panel.add(useridLabel);
+        setDefaultCloseOperation(EXIT_ON_CLOSE); 
 
-		panel.add(passwordLabel);
+        setResizable(false); 
 
-		panel.add(ssnLabel);
+  
 
-		panel.add(contentLabel);
+        container = getContentPane(); 
 
-		JTextField nameField = new JTextField();
+        container.setLayout(null); 
 
-		JTextField useridField = new JTextField();
+  
 
-		JTextField passwordField = new JTextField();
+        title = new JLabel("Swing Form"); 
 
-		JTextField addressField = new JTextField();
+        title.setFont(new Font("Arial", Font.PLAIN, 30)); 
 
-		JTextField contentField = new JTextField();
+        title.setSize(300, 30); 
 
-		panel.add(nameField);
+        title.setLocation(300, 30); 
 
-		panel.add(useridField);
+        container.add(title); 
 
-		panel.add(passwordField);
+  
 
-		panel.add(addressField);
+        nameLabel = new JLabel("Name"); 
 
-		panel.add(contentField);
+        nameLabel.setFont(new Font("Arial", Font.PLAIN, 20)); 
 
-		JButton saveButton = new JButton("저장");
+        nameLabel.setSize(100, 20); 
 
-		JButton cancelButton = new JButton("취소");
+        nameLabel.setLocation(100, 100); 
 
-		panel.add(saveButton); 
+        container.add(nameLabel); 
 
-		panel.add(cancelButton);
+  
 
-		nameLabel.setBounds(40,10,40,40);
+        nameText = new JTextField(); 
 
-		useridLabel.setBounds(40,50,40,40);
+        nameText.setFont(new Font("맑은고딕", Font.PLAIN, 15)); 
 
-		passwordLabel.setBounds(40,90,60,40);
+        nameText.setSize(190, 20); 
 
-		ssnLabel.setBounds(40,130,40,40);
+        nameText.setLocation(200, 100); 
 
-		contentLabel.setBounds(40,170,60,40);
+        container.add(nameText); 
 
-		nameField.setBounds(120,10,200,30);
+  
 
-		useridField.setBounds(120,50,200,30);
+        useridLabel = new JLabel("Userid"); 
 
-		passwordField.setBounds(120,90,200,30);
+        useridLabel.setFont(new Font("Arial", Font.PLAIN, 20)); 
 
-		addressField.setBounds(120,130,280,30);
+        useridLabel.setSize(100, 20); 
 
-		contentField.setBounds(120,180,280,120);
+        useridLabel.setLocation(100, 150); 
 
-		saveButton.setBounds(125,330,80,30);
+        container.add(useridLabel); 
 
-		cancelButton.setBounds(240,330,80,30);
+  
 
-		
+        useridText = new JTextField(); 
 
-		this.setLocationRelativeTo(null);
+        useridText.setFont(new Font("맑은고딕", Font.PLAIN, 15)); 
 
-	}
+        useridText.setSize(150, 20); 
 
-	
+        useridText.setLocation(200, 150); 
 
+        container.add(useridText); 
 
+  
+
+        passwordLabel = new JLabel("Password"); 
+
+        passwordLabel.setFont(new Font("Arial", Font.PLAIN, 20)); 
+
+        passwordLabel.setSize(100, 20); 
+
+        passwordLabel.setLocation(100, 200); 
+
+        container.add(passwordLabel); 
+
+        
+
+        passwordText = new JTextField(); 
+
+        passwordText.setFont(new Font("맑은고딕", Font.PLAIN, 15)); 
+
+        passwordText.setSize(150, 20); 
+
+        passwordText.setLocation(200, 200); 
+
+        container.add(passwordText);
+
+  
+
+        ssnLabel = new JLabel("SSN"); 
+
+        ssnLabel.setFont(new Font("Arial", Font.PLAIN, 20)); 
+
+        ssnLabel.setSize(100, 20); 
+
+        ssnLabel.setLocation(100, 250); 
+
+        container.add(ssnLabel); 
+
+        
+
+        ssnText = new JTextField(); 
+
+        ssnText.setFont(new Font("맑은고딕", Font.PLAIN, 15)); 
+
+        ssnText.setSize(150, 20); 
+
+        ssnText.setLocation(200, 250); 
+
+        container.add(ssnText);
+
+  
+
+        addrLabel = new JLabel("Address"); 
+
+        addrLabel.setFont(new Font("Arial", Font.PLAIN, 20)); 
+
+        addrLabel.setSize(100, 20); 
+
+        addrLabel.setLocation(100, 300); 
+
+        container.add(addrLabel); 
+
+        
+
+        addrText = new JTextField(); 
+
+        addrText.setFont(new Font("맑은고딕", Font.PLAIN, 15)); 
+
+        addrText.setSize(150, 20); 
+
+        addrText.setLocation(200, 300); 
+
+        container.add(addrText);
+
+        
+
+  
+
+        submitButton = new JButton("Submit"); 
+
+        submitButton.setFont(new Font("Arial", Font.PLAIN, 15)); 
+
+        submitButton.setSize(100, 20); 
+
+        submitButton.setLocation(150, 450); 
+
+        container.add(submitButton); 
+
+  
+
+        listButton = new JButton("List"); 
+
+        listButton.setFont(new Font("Arial", Font.PLAIN, 15)); 
+
+        listButton.setSize(100, 20); 
+
+        listButton.setLocation(270, 450); 
+
+        container.add(listButton); 
+
+  
+
+        resultText = new JTextArea(); 
+
+        resultText.setFont(new Font("맑은고딕", Font.PLAIN, 15)); 
+
+        resultText.setSize(300, 400); 
+
+        resultText.setLocation(500, 100); 
+
+        resultText.setLineWrap(true); 
+
+        resultText.setEditable(false); 
+
+        container.add(resultText); 
+
+ 
+
+        setVisible(true); 
+
+    } 
 
 }

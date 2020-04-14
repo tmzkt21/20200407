@@ -9,4 +9,5 @@ public class Constants {
 	public final static String GALAXYNOTE_MENU = "phonenumber,name,company휴대가능여부,검색가능.큰사이즈";
 	public final static String GRADE_MENU ="0. 종료 1.성적표입력 2. 성적표출력";
 	public final static String CARD_MENU ="0.Exit 1.카드 3장 받기 2.출력";
+	public final static String MEMBER_MENU =  "입력 userid,passwd,name,ssn";
 }
