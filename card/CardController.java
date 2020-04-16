@@ -13,7 +13,44 @@ public class CardController {
 
 		
 
-		CardService service = new CardService();
+		CardService service = new CardService() {
+			
+			@Override
+			public void update(Card card) {
+				// TODO Auto-generated method stub
+				
+			}
+			
+			@Override
+			public Card[] list() {
+				// TODO Auto-generated method stub
+				return null;
+			}
+			
+			@Override
+			public Card detail(Card card) {
+				// TODO Auto-generated method stub
+				return null;
+			}
+			
+			@Override
+			public void delete(Card card) {
+				// TODO Auto-generated method stub
+				
+			}
+			
+			@Override
+			public int count() {
+				// TODO Auto-generated method stub
+				return 0;
+			}
+			
+			@Override
+			public void add(Card card) {
+				// TODO Auto-generated method stub
+				
+			}
+		};
 		Card card = null;
 
 		while(true) {
@@ -43,11 +80,11 @@ public class CardController {
 
 			case "2": 
 
-				Card[] cards = service.getCards();
+				Card[] cards = service.list();
 
 				for(int i=0;i<3;i++) {
 					
-					JOptionPane.showMessageDialog(null,CardService,);
+					JOptionPane.showMessageDialog(null,".");
 					System.out.println(String.format("카드모양 %s 카드넘버 %d ", 
 
 							cards[i].getKind(), cards[i].getNumber()));

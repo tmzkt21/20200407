@@ -1,9 +1,13 @@
 package com.jse.member;
 
+
+
 import java.awt.Container;
 
 import java.awt.Font;
+
 import java.awt.event.ActionEvent;
+
 import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
@@ -11,276 +15,514 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 
 import javax.swing.JLabel;
+
 import javax.swing.JOptionPane;
+
 import javax.swing.JTextArea;
 
 import javax.swing.JTextField;
-import com.sun.corba.se.impl.naming.pcosnaming.NameServer;
 
-public class MemberView extends JFrame implements ActionListener {
+
+
+public class MemberView extends JFrame implements ActionListener{
 
 	private static final long serialVersionUID = 1L;
 
-	private Container container;
+    private Container container; 
 
-	private JLabel title, nameLabel, useridLabel, passwordLabel,
+    private JLabel title,nameLabel,useridLabel,passwordLabel,
 
-			ssnLabel, addrLabel;
+    				ssnLabel,addrLabel; 
 
-	private JTextField nameText, useridText, passwordText, ssnText,
+    private JTextField nameText, useridText, passwordText, ssnText,
 
-			addrText;
+    					addrText; 
 
-	private JTextArea resultText;
+    private JTextArea resultText; 
 
-	private JButton saveButton, listButton, loginButton;
+    private JButton submitButton, listButton, loginButton, detailButton, nameButton,
 
-	public MemberService memberService;
+    				genderButton, countButton, updateButton, deleteButton; 
 
-	public void open() {
+    public MemberService memberService;
 
-		memberService = new MemberServiceImpl();
+    public void open(){ 
 
-		setTitle("Swing Exercise");
+        memberService = new MemberServiceImpl();
 
-		setBounds(300, 90, 900, 600);
+    	setTitle("Swing Form"); 
 
-		setDefaultCloseOperation(EXIT_ON_CLOSE);
+        setBounds(300, 90, 900, 600); 
 
-		setResizable(false);
+        setDefaultCloseOperation(EXIT_ON_CLOSE); 
 
-		container = getContentPane();
+        setResizable(false); 
 
-		container.setLayout(null);
+  
 
-		title = new JLabel("Swing Form");
+        container = getContentPane(); 
 
-		title.setFont(new Font("Arial", Font.PLAIN, 30));
+        container.setLayout(null); 
 
-		title.setSize(300, 30);
+  
 
-		title.setLocation(300, 30);
+        title = new JLabel("Registration Form"); 
 
-		container.add(title);
+        title.setFont(new Font("Arial", Font.PLAIN, 30)); 
 
-		nameLabel = new JLabel("Name");
+        title.setSize(300, 30); 
 
-		nameLabel.setFont(new Font("Arial", Font.PLAIN, 20));
+        title.setLocation(300, 30); 
 
-		nameLabel.setSize(100, 20);
+        container.add(title); 
 
-		nameLabel.setLocation(100, 100);
+  
 
-		container.add(nameLabel);
+        nameLabel = new JLabel("Name"); 
 
-		nameText = new JTextField();
+        nameLabel.setFont(new Font("Arial", Font.PLAIN, 20)); 
 
-		nameText.setFont(new Font("맑은고딕", Font.PLAIN, 15));
+        nameLabel.setSize(100, 20); 
 
-		nameText.setSize(190, 20);
+        nameLabel.setLocation(100, 100); 
 
-		nameText.setLocation(200, 100);
+        container.add(nameLabel); 
 
-		container.add(nameText);
+  
 
-		useridLabel = new JLabel("Userid");
+        nameText = new JTextField(); 
 
-		useridLabel.setFont(new Font("Arial", Font.PLAIN, 20));
+        nameText.setFont(new Font("맑은고딕", Font.PLAIN, 15)); 
 
-		useridLabel.setSize(100, 20);
+        nameText.setSize(190, 20); 
 
-		useridLabel.setLocation(100, 150);
+        nameText.setLocation(200, 100); 
 
-		container.add(useridLabel);
+        container.add(nameText); 
 
-		useridText = new JTextField();
+  
 
-		useridText.setFont(new Font("맑은고딕", Font.PLAIN, 15));
+        useridLabel = new JLabel("Userid"); 
 
-		useridText.setSize(150, 20);
+        useridLabel.setFont(new Font("Arial", Font.PLAIN, 20)); 
 
-		useridText.setLocation(200, 150);
+        useridLabel.setSize(100, 20); 
 
-		container.add(useridText);
+        useridLabel.setLocation(100, 150); 
 
-		passwordLabel = new JLabel("Password");
+        container.add(useridLabel); 
 
-		passwordLabel.setFont(new Font("Arial", Font.PLAIN, 20));
+  
 
-		passwordLabel.setSize(100, 20);
+        useridText = new JTextField(); 
 
-		passwordLabel.setLocation(100, 200);
+        useridText.setFont(new Font("맑은고딕", Font.PLAIN, 15)); 
 
-		container.add(passwordLabel);
+        useridText.setSize(150, 20); 
 
-		passwordText = new JTextField();
+        useridText.setLocation(200, 150); 
 
-		passwordText.setFont(new Font("맑은고딕", Font.PLAIN, 15));
+        container.add(useridText); 
 
-		passwordText.setSize(150, 20);
+  
 
-		passwordText.setLocation(200, 200);
+        passwordLabel = new JLabel("Password"); 
 
-		container.add(passwordText);
+        passwordLabel.setFont(new Font("Arial", Font.PLAIN, 20)); 
 
-		ssnLabel = new JLabel("SSN");
+        passwordLabel.setSize(100, 20); 
 
-		ssnLabel.setFont(new Font("Arial", Font.PLAIN, 20));
+        passwordLabel.setLocation(100, 200); 
 
-		ssnLabel.setSize(100, 20);
+        container.add(passwordLabel); 
 
-		ssnLabel.setLocation(100, 250);
+        
 
-		container.add(ssnLabel);
+        passwordText = new JTextField(); 
 
-		ssnText = new JTextField();
+        passwordText.setFont(new Font("맑은고딕", Font.PLAIN, 15)); 
 
-		ssnText.setFont(new Font("맑은고딕", Font.PLAIN, 15));
+        passwordText.setSize(150, 20); 
 
-		ssnText.setSize(150, 20);
+        passwordText.setLocation(200, 200); 
 
-		ssnText.setLocation(200, 250);
+        container.add(passwordText);
 
-		container.add(ssnText);
+  
 
-		addrLabel = new JLabel("Address");
+        ssnLabel = new JLabel("SSN"); 
 
-		addrLabel.setFont(new Font("Arial", Font.PLAIN, 20));
+        ssnLabel.setFont(new Font("Arial", Font.PLAIN, 20)); 
 
-		addrLabel.setSize(100, 20);
+        ssnLabel.setSize(100, 20); 
 
-		addrLabel.setLocation(100, 300);
+        ssnLabel.setLocation(100, 250); 
 
-		container.add(addrLabel);
+        container.add(ssnLabel); 
 
-		addrText = new JTextField();
+        
 
-		addrText.setFont(new Font("맑은고딕", Font.PLAIN, 15));
+        ssnText = new JTextField(); 
 
-		addrText.setSize(150, 20);
+        ssnText.setFont(new Font("맑은고딕", Font.PLAIN, 15)); 
 
-		addrText.setLocation(200, 300);
+        ssnText.setSize(150, 20); 
 
-		container.add(addrText);
+        ssnText.setLocation(200, 250); 
 
-		saveButton = new JButton("Submit");
+        container.add(ssnText);
 
-		saveButton.setFont(new Font("Arial", Font.PLAIN, 15));
+  
 
-		saveButton.setSize(100, 20);
+        addrLabel = new JLabel("Address"); 
 
-		saveButton.setLocation(150, 450);
+        addrLabel.setFont(new Font("Arial", Font.PLAIN, 20)); 
 
-		saveButton.addActionListener(this);
+        addrLabel.setSize(100, 20); 
 
-		container.add(saveButton);
+        addrLabel.setLocation(100, 300); 
 
-		listButton = new JButton("List");
+        container.add(addrLabel); 
 
-		listButton.setFont(new Font("Arial", Font.PLAIN, 15));
+        
 
-		listButton.setSize(100, 20);
+        addrText = new JTextField(); 
 
-		listButton.setLocation(270, 450);
+        addrText.setFont(new Font("맑은고딕", Font.PLAIN, 15)); 
 
-		listButton.addActionListener(this);
+        addrText.setSize(150, 20); 
 
-		container.add(listButton);
+        addrText.setLocation(200, 300); 
 
-		loginButton = new JButton("Login");
+        container.add(addrText);
 
-		loginButton.setFont(new Font("Arial", Font.PLAIN, 15));
+        
 
-		loginButton.setSize(100, 20);
+  
 
-		loginButton.setLocation(390, 450);
+        submitButton = new JButton("Save");
 
-		loginButton.addActionListener(this);
+        submitButton.setFont(new Font("Arial", Font.PLAIN, 15));
 
-		container.add(loginButton);
+        submitButton.setSize(100, 20);
 
-		resultText = new JTextArea();
+        submitButton.setLocation(100, 400);
 
-		resultText.setFont(new Font("맑은고딕", Font.PLAIN, 15));
+        submitButton.addActionListener(this);
 
-		resultText.setSize(300, 400);
+        container.add(submitButton);
 
-		resultText.setLocation(500, 100);
+        
 
-		resultText.setLineWrap(true);
+        listButton = new JButton("List");
 
-		resultText.setEditable(false);
+        listButton.setFont(new Font("Arial", Font.PLAIN, 15));
 
-		container.add(resultText);
+        listButton.setSize(100, 20);
 
-		setVisible(true);
+        listButton.setLocation(220, 400);
 
-	}
+        listButton.addActionListener(this);
+
+        container.add(listButton);
+
+        
+
+        loginButton = new JButton("Log in");
+
+        loginButton.setFont(new Font("Arial", Font.PLAIN, 15));
+
+        loginButton.setSize(100, 20);
+
+        loginButton.setLocation(340, 400);
+
+        loginButton.addActionListener(this);
+
+        container.add(loginButton);
+
+        
+
+        detailButton = new JButton("Detail");
+
+        detailButton.setFont(new Font("Arial", Font.PLAIN, 15));
+
+        detailButton.setSize(100, 20);
+
+        detailButton.setLocation(100, 440);
+
+        detailButton.addActionListener(this);
+
+        container.add(detailButton);
+
+        nameButton = new JButton("Name");
+
+        nameButton.setFont(new Font("Arial", Font.PLAIN, 15));
+
+        nameButton.setSize(100, 20);
+
+        nameButton.setLocation(220, 440);
+
+        nameButton.addActionListener(this);
+
+        container.add(nameButton);
+
+        genderButton = new JButton("Gender");
+
+        genderButton.setFont(new Font("Arial", Font.PLAIN, 15));
+
+        genderButton.setSize(100, 20);
+
+        genderButton.setLocation(340, 440);
+
+        genderButton.addActionListener(this);
+
+        container.add(genderButton);
+
+        countButton = new JButton("Count");
+
+        countButton.setFont(new Font("Arial", Font.PLAIN, 15));
+
+        countButton.setSize(100, 20);
+
+        countButton.setLocation(100, 480);
+
+        countButton.addActionListener(this);
+
+        container.add(countButton);
+
+        updateButton = new JButton("Update");
+
+        updateButton.setFont(new Font("Arial", Font.PLAIN, 15));
+
+        updateButton.setSize(100, 20);
+
+        updateButton.setLocation(220, 480);
+
+        updateButton.addActionListener(this);
+
+        container.add(updateButton);
+
+        deleteButton = new JButton("Delete");
+
+        deleteButton.setFont(new Font("Arial", Font.PLAIN, 15));
+
+        deleteButton.setSize(100, 20);
+
+        deleteButton.setLocation(340, 480);
+
+        deleteButton.addActionListener(this);
+
+        container.add(deleteButton);
+
+  
+
+        resultText = new JTextArea(); 
+
+        resultText.setFont(new Font("맑은고딕", Font.PLAIN, 15)); 
+
+        resultText.setSize(300, 400); 
+
+        resultText.setLocation(500, 100); 
+
+        resultText.setLineWrap(true); 
+
+        resultText.setEditable(false); 
+
+        container.add(resultText); 
+
+ 
+
+        setVisible(true); 
+
+    } 
 
 	@Override
+
 	public void actionPerformed(ActionEvent e) {
 
-		if (e.getSource() == saveButton) {
-			JOptionPane.showMessageDialog(this, "test");// test 확인
-			nameText.setText("홍길동,유관순,이순신,신사임당,이도");
-			useridText.setText("hong,you,lee,shin,leedo");
-			passwordText.setText("1,1,1,1,1");
-			ssnText.setText("900101-1,960101-2,980101-1,011010-4,020606-3");
-			addrText.setText("서울,서울,서울,부산,부산");// 값미리 지정
+		
 
-			String data = String.format("%s/%s/%s/%s/%s", nameText.getText(), useridText.getText(),
-					passwordText.getText(), ssnText.getText(), addrText.getText());// 값출력
+		if(e.getSource() == submitButton) {
+
+			JOptionPane.showMessageDialog(this, "test");
+
+			nameText.setText("홍길동,유관순,이순신,신사임당,이도");
+
+			useridText.setText("hong,you,lee,shin,leedo");
+
+			passwordText.setText("1,1,1,1,1");
+
+			ssnText.setText("900101-1,960101-2,980101-1,011010-4,020606-3");
+
+			addrText.setText("서울,서울,서울,부산,부산");
+
+			String data = String.format("%s/%s/%s/%s/%s", 
+
+					nameText.getText(),
+
+					useridText.getText(),
+
+					passwordText.getText(),
+
+					ssnText.getText(),
+
+					addrText.getText());
 
 			String[] arr = data.split("/");
+
 			String[] names = arr[0].split(",");
-			System.out.println();
+
 			String[] userids = arr[1].split(",");
+
 			String[] passwords = arr[2].split(",");
+
 			String[] ssns = arr[3].split(",");
+
 			String[] addrs = arr[4].split(",");
-			Member[] members = new Member[5];
-			for (int i = 0; i < 5; i++) {
-				members[i] = new Member();
-				members[i].setName(names[i]);
-				members[i].setUserid(userids[i]);
-				members[i].setPasswd(passwords[i]);
-				members[i].setSsn(ssns[i]);
-				members[i].setAddr(addrs[i]);
-				memberService.add(members[i]);
+
+			Member member = null;
+
+			for(int i=0;i< names.length; i++) {
+
+				member = new Member(); 
+
+				member.setName(names[i]);
+
+				member.setUserid(userids[i]);
+
+				member.setPasswd(passwords[i]);
+
+				member.setSsn(ssns[i]);
+
+				member.setAddr(addrs[i]);
+
+				memberService.add(member);
 
 			}
-			
-			
-		} else if (e.getSource() == listButton) {
 
-			Member[] members = memberService.getMember();
+		}else if(e.getSource() == listButton) {
+
+			Member[] members = memberService.list();
 
 			String result = "";
-			
-			for (int i = 0; i < members.length; i++) {
-				result += (members[i] + "\n");
+
+			for(int i=0;i< members.length; i++) {
+
+				result += (members[i]+"\n");
+
 			}
+
 			nameText.setText("");
+
 			useridText.setText("");
+
 			passwordText.setText("");
+
 			ssnText.setText("");
+
 			addrText.setText("");
+
 			resultText.setText(result);
 
-		} else if (e.getSource() == loginButton) {
-			JOptionPane.showMessageDialog(this,"Log in :" + useridText.getText() + "," + passwordText.getText());
-			Member member  = new Member();
+		}else if(e.getSource() == loginButton) {
+
+			JOptionPane.showMessageDialog(this, "Log in :" + useridText.getText() 
+
+			+ ","+ passwordText.getText());
+
+			Member member = new Member();
+
 			member.setUserid(useridText.getText());
+
 			member.setPasswd(passwordText.getText());
-			Member returnMember  = memberService.login(member);
+
+			Member returnMember =memberService.login(member);
+
 			if(returnMember != null) {
+
 				resultText.setText(returnMember.toString());
-				
+
 			}else {
-				resultText.setText("로그인실패");
+
+				resultText.setText("로그인 실패");
+
 			}
+
+		}else if(e.getSource() == detailButton) {
+
+			Member returnMember = memberService.detail(useridText.getText());
+
+			if(returnMember != null) {
+
+				resultText.setText(returnMember.toString());
+
+			}else {
+
+				resultText.setText("해당 ID 가 존재하지 않음");
+
+			}
+
+		}else if(e.getSource() == nameButton) {
+
+			Member[] returnMembers = memberService.searchByname(nameText.getText());
+
+			if(returnMembers != null) {
+
+				String result = "";
+
+				for(int i=0; i< returnMembers.length; i++) {
+
+					result += returnMembers[i].toString()+"\n";
+
+				}
+
+				resultText.setText(result);
+
+			}else {
+
+				resultText.setText("해당 이름이 존재하지 않음");
+
+			}
+
+		}else if(e.getSource() == genderButton) {
+
+			//memberService.searchByGender(ssnText.getText());
+
+		}else if(e.getSource() == countButton) {
+
+			resultText.setText(String.valueOf(memberService.count()));
+
+		}else if(e.getSource() == updateButton) {
+
+			String userid = useridText.getText();
+
+			String newPassword = passwordText.getText();
+
+			Member updateMember = new Member();
+
+			updateMember.setUserid(userid);
+
+			updateMember.setPasswd(newPassword);
+
+			memberService.update(updateMember);
+
+		}else if(e.getSource() == deleteButton) {
+
+			Member deleteMember = new Member();
+
+			deleteMember.setUserid(useridText.getText());
+
+			deleteMember.setPasswd(passwordText.getText());
+
+			memberService.delete(deleteMember);
+
 		}
+
+			
+
+		
 
 	}
 
 }
+

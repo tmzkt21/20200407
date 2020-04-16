@@ -116,7 +116,7 @@ public class GameController {
 
 				calculator.setNum2(b);
 
-				int c = calculator.calculate();
+				int c = calculator.calaculate();
 
 				System.out.println("두수의 합" + c);
 

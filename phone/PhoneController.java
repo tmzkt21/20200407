@@ -10,7 +10,7 @@ public class PhoneController {
 
 	public static void main(String[] args) {
 
-		PhoneService phoneService = new PhoneService();
+		PhoneService phoneService = new PhoneServiceImpe();
 
 		String message = "";
 
@@ -36,7 +36,7 @@ public class PhoneController {
 
 			case "2": 
 
-				Phone[] phones = phoneService.getPhones(); 
+				Phone[] phones = phoneService.phonelist(); 
 
 				message = "";
 
@@ -64,13 +64,13 @@ public class PhoneController {
 
 			case "4": 
 
-				CelPhone[] celPhones = phoneService.getCelPhones(); 
+				CelPhone[] celPhones = phoneService.celphonelist();
 
 				message = "";
 
 				for(int i=0; i< 3;i++) {
 
-					message += celPhones[i].toString()+"\n";
+				//	message += celPhones[i].toString()+"\n";
 
 				}
 
@@ -92,7 +92,7 @@ public class PhoneController {
 
 			case "6": 
 
-				Iphone[] iPhones = phoneService.getiPhones();
+			Iphone[] iPhones = phoneService.iphonelist();
 
 				message = "";
 
@@ -110,7 +110,7 @@ public class PhoneController {
 
 				for(int i=0;i<3;i++) {
 
-					String[] values = JOptionPane.showInputDialog(Constants.GALAXY_NOTE_MENU).split(",");
+					String[] values = JOptionPane.showInputDialog(Constants.GALAXYNOTE_MENU).split(",");
 
 					phoneService.add(new GalaxyNote(values[0], values[1], values[2], 
 
@@ -122,7 +122,7 @@ public class PhoneController {
 
 			case "8": 
 
-				GalaxyNote[] galaxyNotes = phoneService.getGalaxyNote(); 
+			GalaxyNote[] galaxyNotes = phoneService.galaxylist();
 
 				message = "";
 
